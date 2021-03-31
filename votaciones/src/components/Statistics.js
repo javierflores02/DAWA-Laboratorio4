@@ -1,3 +1,5 @@
+import Statistic from './Statistic'
+
 const Statistics = (props) => {
     const [good,neutral,bad] = props.datos
     const total = good+neutral+bad
@@ -8,12 +10,12 @@ const Statistics = (props) => {
                 <p><b>No feed back given</b></p>
             ) : (
                 <>
-                    <p>good {good}</p>
-                    <p>neutral {neutral}</p>
-                    <p>bad {bad}</p>
-                    <p>all {total}</p>
-                    <p>average {(good*1+neutral*0+bad*-1)/(total)}</p>
-                    <p>positive {(good/(total))*100}%</p>
+                    <Statistic nombre={"good"} valor={good}/>
+                    <Statistic nombre={"neutral"} valor={neutral}/>
+                    <Statistic nombre={"bad"} valor={bad}/>
+                    <Statistic nombre={"all"} valor={total}/>
+                    <Statistic nombre={"average"} valor={(good*1+neutral*0+bad*-1)/(total)}/>
+                    <Statistic nombre={"positive"} valor={`${(good/(total))*100}%`}/>
                 </>
             )}
             
