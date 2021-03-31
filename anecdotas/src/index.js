@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom'
 
 const App = (props) => {
   const [selected, setSelected] = useState(0)
+  const [anecdotas, setAnecdotas] = useState(props.anecdotes)
 
-  const handleClick = () => {
+  const handleNext = () => {
     while(true){
-      let indice = Math.floor(Math.random() * (props.anecdotes.length - 0) + 0)
+      let indice = Math.floor(Math.random() * (anecdotas.length - 0) + 0)
       if(indice !== selected){
         setSelected(indice)
         break
@@ -14,21 +15,47 @@ const App = (props) => {
     }
   }
 
+  const handleVote = () => {
+    let anecdotas_copy = [...anecdotas]
+    anecdotas_copy[selected].votos += 1
+    setAnecdotas(anecdotas_copy)
+  }
+
   return (
     <div>
-      <p>{props.anecdotes[selected]}</p>
-      <button onClick={handleClick}>Next</button>
+      <p>{anecdotas[selected].anecdota}</p>
+      <p>has {anecdotas[selected].votos} votes.</p>
+      <button onClick={handleNext}>Next</button>
+      <button onClick={handleVote}>Vote</button>
     </div>
   )
 }
 
 const anecdotes = [
-  'If it hurts, do it more often',
-  'Adding manpower to a late software project makes it later!',
-  'The first 90 percent of the code accounts for the first 90 percent of the development time...The remaining 10 percent of the code accounts for the other 90 percent of the development time.',
-  'Any fool can write code that a computer can understand. Good programmers write code that humans can understand.',
-  'Premature optimization is the root of all evil.',
-  'Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.'
+  {
+    anecdota: 'If it hurts, do it more often',
+    votos: 0
+  },
+  {
+    anecdota: 'Adding manpower to a late software project makes it later!',
+    votos: 0
+  },
+  {
+    anecdota: 'The first 90 percent of the code accounts for the first 90 percent of the development time...The remaining 10 percent of the code accounts for the other 90 percent of the development time.',
+    votos: 0
+  },
+  {
+    anecdota: 'Any fool can write code that a computer can understand. Good programmers write code that humans can understand.',
+    votos: 0
+  },
+  {
+    anecdota: 'Premature optimization is the root of all evil.',
+    votos: 0
+  },
+  {
+    anecdota: 'Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.',
+    votos: 0
+  }
 ]
 
 ReactDOM.render(
