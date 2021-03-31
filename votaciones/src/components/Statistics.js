@@ -6,7 +6,7 @@ const Statistics = (props) => {
     return(
         <div style={{marginTop: '30px'}}>
             <h3>Statistics</h3>
-            {total == 0 ? (
+            {total === 0 ? (
                 <p style={{marginTop: '20px', textAlign: 'center', color: 'red'}}><b>No feed back given</b></p>
             ) : (
                 <div className="estadisticas-contenedor">
