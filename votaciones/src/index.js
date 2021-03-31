@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 import Statistics from './components/Statistics'
 import Button from './components/Button'
+import './styles.css'
 
 const App = () => {
   const [good, setGood] = useState(0)
@@ -19,12 +20,12 @@ const App = () => {
   }
 
   return (
-    <div>
+    <div className="contenedor">
       <h3>Give feedback</h3>
-      <div>
-        <Button handle={handleGood} nombre={"good"}/>
-        <Button handle={handleNeutral} nombre={"neutral"}/>
-        <Button handle={handleBad} nombre={"bad"}/>
+      <div className="botones">
+        <Button handle={handleGood} nombre={"Good"}/>
+        <Button handle={handleNeutral} nombre={"Neutral"}/>
+        <Button handle={handleBad} nombre={"Bad"}/>
       </div>
       <Statistics datos={[good,neutral,bad]}/>
     </div>

@@ -1,6 +1,9 @@
 const Statistic = (props) => {
     return(
-        <p>{props.nombre} {props.valor}</p>
+        <div className="estadistica">
+            <p>{props.valor}</p>
+            <p>{props.nombre} </p>
+        </div>
     )
 }
 

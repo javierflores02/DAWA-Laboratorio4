@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+}
+
+.contenedor{
+    background-color: #D0F9FF;
+    height: 100vh;
+    padding: 20px;
+}
+
+.botones{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.botones button{
+    border: 0px;
+    cursor: pointer;
+    padding: 10px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.botones > button:nth-child(1){
+    background-color: #85DE77;
+}
+
+.botones > button:nth-child(2){
+    background-color: #FFF49C;
+}
+
+.botones > button:nth-child(3){
+    background-color: #FF756D;
+}
+
+h3 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+.estadisticas-contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.estadistica{
+    flex: 0 0 30%;
+    margin-top: 10px;
+}
+
+.estadistica > p{
+    text-align: center;
+}
+
+.estadistica > p:nth-child(1){
+    font-size: 30px;
+    font-weight: bold;
+}
+@media screen and (max-width:450px) {
+    .botones{
+        flex-wrap: wrap;
+    }
+    
+    .botones button{
+        flex: 0 0 100%;
+        margin-bottom: 8px;
+    }
+
+    .estadistica{
+        flex: 0 0 100%;
+        margin-bottom: 15px;
+    }
+}
