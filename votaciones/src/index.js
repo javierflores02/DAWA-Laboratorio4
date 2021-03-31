@@ -19,7 +19,7 @@ const App = () => {
 
   return (
     <div>
-      <p>Give feedback</p>
+      <h3>Give feedback</h3>
       <div>
         <button onClick={handleGood}>good</button>
         <button onClick={handleNeutral}>neutral</button>
