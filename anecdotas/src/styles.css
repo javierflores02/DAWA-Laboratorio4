@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+}
+
+.contenedor{
+    display: flex;
+    justify-content: space-around;
+    max-width:100%;
+    background-color:#666;
+    padding:6em;
+}
+
+.anecdota {
+    flex: 0 0 35%;
+    text-decoration:none;
+    color:#000;
+    display:block;
+    padding:1em;
+    padding-bottom: 10rem;
+    -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
+    -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+    box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+    -moz-transition:-moz-transform .15s linear;
+    -o-transition:-o-transform .15s linear;
+    -webkit-transition:-webkit-transform .15s linear;
+}
+
+.anecdota:nth-child(1) {
+    background:#ffc;
+    -webkit-transform:rotate(-6deg);
+    -o-transform:rotate(-6deg);
+    -moz-transform:rotate(-6deg);
+}
+
+.anecdota:nth-child(2) {
+    background:#cfc;
+    -o-transform:rotate(5deg);
+    -webkit-transform:rotate(5deg);
+    -moz-transform:rotate(5deg);
+}
+
+.anecdota h2, p{
+    font-size:100%;
+    font-weight:normal;
+}
+
+.anecdota h2, p{
+    margin-top: 1rem;
+}
+
+.anecdota:hover{
+    -moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);
+    -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
+    box-shadow:10px 10px 7px rgba(0,0,0,.7);
+    -webkit-transform: scale(1.25);
+    -moz-transform: scale(1.25);
+    -o-transform: scale(1.25);
+    position:relative;
+    z-index:5;
+}
+
+.anecdota h2{
+    font-size:160%;
+    font-weight:bold;
+    padding-bottom:0px;
+    font-family:Oswald;
+    text-align:center;
+    color:#000;
+}
+
+.anecdota p{
+    font-family:'Shadows Into Light Two',arial,sans-serif;
+    font-size:140%;
+    color:#000;
+}
+
+.anecdota-footer{
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+
+.acciones{
+    display: flex;
+    width: 100%;
+}
+
+.accion-part{
+    flex: 0 0 45%;
+    margin: 0;
+}
+
+.botones{
+    display: flex;
+    justify-content: space-around;
+}
+
+.botones button{
+    flex: 0 0 45%;
+}
+
+@media screen and (max-width:800px) {
+    .anecdota {
+        flex: 0 0 100%;
+        margin-bottom: 5rem;
+    }
+    .contenedor{
+        flex-wrap: wrap;
+    }
+    
+}

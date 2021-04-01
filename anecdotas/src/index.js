@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
+import './styles.css'
 
 const App = (props) => {
   const [selected, setSelected] = useState(0)
@@ -20,7 +21,7 @@ const App = (props) => {
     anecdotas_copy[selected].votos += 1
     setAnecdotas(anecdotas_copy)
   }
-  
+
   let mayor = anecdotas[0].votos
   let indice = 0
   for (let i = 0; i < anecdotas.length; i++) {
@@ -31,20 +32,30 @@ const App = (props) => {
   }
 
   return (
-    <div>
-      <div>
-        <h3>Anecdote of the day</h3>
-        <p>{anecdotas[selected].anecdota}</p>
-        <p>has {anecdotas[selected].votos} votes.</p>
-        <button onClick={handleNext}>Next</button>
-        <button onClick={handleVote}>Vote</button>
-      </div>
-      <div>
-        <h3>Anecdote whit most votes</h3>
-        <p>{anecdotas[indice].anecdota}</p>
-        <p>has {anecdotas[indice].votos} votes.</p>
+  <div className="contenedor">
+    <div className="anecdota">
+      <h2>Anecdote of the day</h2><hr />
+      <p>{anecdotas[selected].anecdota}</p>
+      <div className="anecdota-footer">
+        <div className="acciones">
+          <p className="accion-part">Has {anecdotas[selected].votos} votes.</p>
+          <div className="accion-part botones">
+            <button onClick={handleNext}>Next</button>
+            <button onClick={handleVote}>Vote</button>
+          </div>
+        </div>
       </div>
     </div>
+    <div className="anecdota">
+      <h2>Anecdote whit most votes</h2><hr />
+      <p>{anecdotas[indice].anecdota}</p>
+      <div className="anecdota-footer">
+        <div className="acciones">
+          <p className="accion-part">Has {anecdotas[indice].votos} votes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
   )
 }
 
